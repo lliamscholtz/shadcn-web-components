@@ -1,0 +1,141 @@
+<!-- https://software-engineering-corner.hashnode.dev/using-tailwindcss-with-web-components-and-shadowdom-in-litelement -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>chadcn/ui web components</title>
+  <link rel="stylesheet" href="./src/tailwind.css" />
+
+  <script type="module" src="/src/layouts/pn-container.ts"></script>
+  <script type="module" src="/src/layouts/pn-col-2.ts"></script>
+  <script type="module" src="/src/layouts/pn-nav.ts"></script>
+
+  <script type="module" src="/src/components/pn-a.ts"></script>
+  <script type="module" src="/src/components/pn-avatar.ts"></script>
+  <script type="module" src="/src/components/pn-badge.ts"></script>
+  <script type="module" src="/src/components/pn-badge-ghost.ts"></script>
+  <script type="module" src="/src/components/pn-button.ts"></script>
+  <script type="module" src="/src/components/pn-button-ghost.ts"></script>
+  <script type="module" src="/src/components/pn-card.ts"></script>
+  <script type="module" src="/src/components/pn-checkbox.ts"></script>
+  <script type="module" src="/src/components/pn-h1.ts"></script>
+  <script type="module" src="/src/components/pn-h2.ts"></script>
+  <script type="module" src="/src/components/pn-img.ts"></script>
+  <script type="module" src="/src/components/pn-input.ts"></script>
+  <script type="module" src="/src/components/pn-p.ts"></script>
+  <script type="module" src="/src/components/pn-progress.ts"></script>
+  <script type="module" src="/src/components/pn-skeleton.ts"></script>
+  <script type="module" src="/src/components/pn-spacer.ts"></script>
+  <script type="module" src="/src/components/pn-switch.ts"></script>
+  <script type="module" src="/src/components/pn-textarea.ts"></script>
+</head>
+
+<body class="dark bg-background text-foreground p-8">
+
+  <pn-container>
+
+    <pn-nav>
+      <h1 slot="title">web/components</h1>
+      <div slot="links">
+        <pn-a>Link</pn-a>
+        <pn-a>Link</pn-a>
+        <pn-a>Link</pn-a>
+      </div>
+    </pn-nav>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-img
+      src="https://images.unsplash.com/photo-1530128051436-3ab3663a4683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80"
+      alt="Example" aspect="3/1"></pn-img>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-avatar>
+      <img class="aspect-square h-full w-full" alt="@shadcn" src="https://github.com/shadcn.png" />
+    </pn-avatar>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-badge>badge</pn-badge>
+    <pn-badge-ghost>badge</pn-badge-ghost>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-h1>This is a heading</pn-h1>
+    <pn-spacer size="2"></pn-spacer>
+    <pn-h2>This is a sub-heading</pn-h2>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptatem optio porro dolorum
+      deserunt eaque
+      ad tenetur id at unde facilis voluptate deleniti vel reiciendis similique earum tempora.</pn-p>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-button>Click me</pn-button>
+    <pn-button-ghost>Click me</pn-button-ghost>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-col-2>
+
+      <pn-card>
+
+        <pn-h2>Web Component</pn-h2>
+        <pn-spacer size="2"></pn-spacer>
+        <pn-p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptatem optio porro dolorum
+          deserunt eaque
+          ad tenetur id at unde facilis voluptate deleniti vel reiciendis similique earum tempora, magnam eos.</pn-p>
+      </pn-card>
+
+      <pn-card>
+        <pn-h2>Sign up</pn-h2>
+        <pn-spacer size="2"></pn-spacer>
+        <pn-p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</pn-p>
+        <pn-spacer size="2"></pn-spacer>
+        <pn-input>Email address</pn-input>
+        <pn-spacer size="4"></pn-spacer>
+        <pn-checkbox>Accept terms and conditions</pn-checkbox>
+        <pn-spacer size="4"></pn-spacer>
+        <pn-button>Sign up</pn-button>
+      </pn-card>
+
+    </pn-col-2>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-progress></pn-progress>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-skeleton></pn-skeleton>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-switch></pn-switch>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    <pn-textarea></pn-textarea>
+
+    <pn-spacer size="4"></pn-spacer>
+
+    </pn-col-2>
+
+    <footer>
+      <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+        <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">Built from<!-- --> <a
+            href="https://ui.shadcn.com/" target="_blank" rel="noreferrer"
+            class="font-medium underline underline-offset-4">shadcn</a> ❤️. The source code is available on<!-- --> <a
+            href="https://github.com/shadcn-ui/ui" target="_blank" rel="noreferrer"
+            class="font-medium underline underline-offset-4">GitHub</a>.</p>
+      </div>
+    </footer>
+</body>
+
+</html>
